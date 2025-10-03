@@ -14,23 +14,23 @@ import Screen from "./Screen";
 
 // ---------------- 3D MODELS ----------------
 function Model(props) {
-  const { scene } = useGLTF("/Lighthouse-model.glb");
+  const { scene } = useGLTF("./assets/Lighthouse-model.glb");
   return <primitive object={scene} {...props} />;
 }
 
 function Model_2(props) {
-  const { scene } = useGLTF("/Lighthouse-model-computer.glb");
+  const { scene } = useGLTF("./assets/Lighthouse-model-computer.glb");
   return <primitive object={scene} {...props} />;
 }
 
 function Model_3(props) {
-  const { scene } = useGLTF("/Lighthouse-model-switch.glb");
+  const { scene } = useGLTF("./assets/Lighthouse-model-switch.glb");
   return <primitive object={scene} {...props} />;
 }
 
 // ✅ Animated knob component (forwardRef!)
 const AnimatedKnob = forwardRef(({ isOn, setIsOn, ...props }, ref) => {
-  const { scene, animations } = useGLTF("/Lighthouse-model-switch_nob.glb");
+  const { scene, animations } = useGLTF("./assets/Lighthouse-model-switch_nob.glb");
   const group = useRef();
   const { actions } = useAnimations(animations, group);
 
@@ -77,7 +77,7 @@ const AnimatedKnob = forwardRef(({ isOn, setIsOn, ...props }, ref) => {
 function TexturedCone({ isVisible, ...props }) {
   const texture = useLoader(
     THREE.TextureLoader,
-    "/Lighthouse_cone (0-00-00-00).png"
+    "./assets/Lighthouse_cone (0-00-00-00).png"
   );
 
   texture.center.set(0.5, 0.5);
