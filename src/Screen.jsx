@@ -7,7 +7,7 @@ export default function Screen({
   scale = 1,
 }) {
   const { RiveComponent } = useRive({
-    src: "/Resume_button.riv",
+    src: "./assets/Resume_button.riv",
     autoplay: true,
     stateMachines: "State Machine 1",
     fit: "contain",
